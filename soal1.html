@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>103092400077_Soal1</title>
+    <link type="text/css" rel="stylesheet" href="style1.css">
+</head>
+<body onload="tampilkanData()">
+    <form>
+        <div class="form-group">
+            <label>Nama</label>
+            <input type="text" class="form-control" id="nama" readonly>
+        </div>
+        <div class="form-group">
+            <label>NIM</label>
+            <input type="text" class="form-control" id="nim" readonly>
+        </div>
+    </form>
+
+    <script type="text/javascript">
+        // Fungsi untuk meminta input lewat prompt
+        function mintaInput(pesan) {
+            var nilai = prompt(pesan);
+            // Jika user menekan Cancel atau tidak mengisi apa-apa
+            if (nilai === null || nilai.trim() === "") {
+                return "-";
+            }
+            return nilai.trim();
+        }
+
+        // Fungsi utama, dipanggil saat halaman pertama kali dibuka (onload)
+        function tampilkanData() {
+            var nama = mintaInput("Masukkan nama kamu:");
+            var nim = mintaInput("Masukkan nim kamu:");
+
+            document.getElementById("nama").value = nama;
+            document.getElementById("nim").value = nim;
+        }
+    </script>
+
+</body>
+</html>
